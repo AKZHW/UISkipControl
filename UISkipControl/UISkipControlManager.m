@@ -59,12 +59,9 @@
     }
     
     __weak UIViewController *weakSkippingController = skippingController;
-    __weak UIViewController *weakSkippedViewController = skippedViewController;
 
     
     id cleanCompetionBlock = ^{
-        __weak UIViewController *strongSkippingController = weakSkippingController;
-        __weak UIViewController *strongSkippedViewController = weakSkippedViewController;
         __weak UIWindow *strongWindow = weakWindow;
         
         if (strongWindow) {
