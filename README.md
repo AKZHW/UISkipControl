@@ -1,4 +1,6 @@
 # UISkipControl
+##pod 使用
+pod search UISkipControl, 版本0.0.1
 本库，是为了解决iosUIViewController跳转产生的crash，包括
 
 1.UINavigationController的push pop
