@@ -1,8 +1,6 @@
 # UISkipControl
 本库，是为了解决iosUIViewController跳转产生的crash，包括
-
 1.UINavigationController的push pop
-
 2.UIViewController的dissmiss present
 
 系统在跳转过程中不会禁止其他的跳转，所以我们需要限制起来，防止多次跳转产生crash。
