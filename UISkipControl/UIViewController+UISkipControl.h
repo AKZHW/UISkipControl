@@ -10,4 +10,11 @@
 
 @interface UIViewController (UISkipControl)
 
+- (void)skipPresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion;
+
+- (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag allowQueued:(BOOL)isAllowQueued completion:(void (^)(void))completion;
+
+- (void)skipPresentDismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion;
+
+- (void)dismissViewControllerAnimated:(BOOL)flag allowQueued:(BOOL)isAllowQueued completion:(void (^)(void))completion;
 @end

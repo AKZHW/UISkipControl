@@ -9,6 +9,7 @@
 #import "UISkipControlManager.h"
 #import "UINavigationController+UISkipControl.h"
 #import "UIWindow+UISkipControl.h"
+#import "UIViewController+UISkipControl.h"
 #import <UIKit/UIKit.h>
 
 @implementation UISkipControlManager
@@ -62,7 +63,7 @@
 
     
     id cleanCompetionBlock = ^{
-        __weak UIWindow *strongWindow = weakWindow;
+        __strong UIWindow *strongWindow = weakWindow;
         
         if (strongWindow) {
             strongWindow.isAnimated = NO;
@@ -137,6 +138,17 @@
            return [navigationController skipPopToRootViewControllerAnimated:animatd];
         }
             break;
+        case UISkipControlSkipTypePresent:
+        {
+            [skippingController skipPresentViewController:skippedViewController animated:animatd completion:competionBlock];
+            return nil;
+        }
+            break;
+        case UISkipControlSkipTypeDismiss:
+        {
+            [skippingController skipPresentDismissViewControllerAnimated:animatd completion:competionBlock];
+            return nil;
+        }
             
         default:
             break;
